@@ -1,0 +1,9 @@
+.gcloudignore
+.git
+.gitignore
+.github/
+.env.yaml
+README.md
+*.sh
+*_test.go
+LICENSE

@@ -16,4 +16,4 @@
 
 # env secret
 .env
-env.yaml
+.env.yaml
