@@ -5,5 +5,7 @@
 .env.yaml
 README.md
 *.sh
-*_test.go
+tests/
 LICENSE
+coverage*
+Makefile
