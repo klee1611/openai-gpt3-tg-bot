@@ -1,10 +1,10 @@
-package openaichatbot_test
+package openaigpt3bot_test
 
 import (
 	"os"
 	"testing"
 
-	chat "github.com/klee1611/openai-tg-bot"
+	gpt3 "github.com/klee1611/openai-gpt3-tg-bot"
 )
 
 func TestSendTgMsg(t *testing.T) {
@@ -15,7 +15,7 @@ func TestSendTgMsg(t *testing.T) {
 		mockTgServer := mockTGServer()
 		defer mockTgServer.Close()
 
-		tgAPI := chat.TelegramAPI{
+		tgAPI := gpt3.TelegramAPI{
 			BaseURL: mockTgServer.URL,
 			Token:   os.Getenv("TG_BOT_TOKEN"),
 		}

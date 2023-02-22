@@ -1,8 +1,8 @@
 .PHONY: test deploy
 
 test:
-	@cd openaichatbot && \
-		go test -v -coverprofile=coverage.out -covermode=atomic -coverpkg=../openaichatbot ./... && \
+	@cd src && \
+		go test -v -coverprofile=coverage.out -covermode=atomic -coverpkg=../src ./... && \
 		go tool cover -html=coverage.out -o coverage.html
 
 deploy:

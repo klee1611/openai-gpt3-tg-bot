@@ -1,4 +1,4 @@
-package openaichatbot
+package openaigpt3bot
 
 import (
 	"errors"

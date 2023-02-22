@@ -1,4 +1,4 @@
-package openaichatbot
+package openaigpt3bot
 
 import (
 	"encoding/json"
@@ -70,15 +70,15 @@ func TgWebHook(w http.ResponseWriter, r *http.Request) {
 	}
 	log.Info("Valid telegram user")
 
-	openAI := OpenAIAPI{
+	gpt3API := OpenAIGPT3API{
 		BaseURL: os.Getenv("OPENAI_API_URL"),
 		Token:   os.Getenv("OPENAI_API_KEY"),
 	}
-	resp, err := openAI.OpenAI(reqBody.Message.Text)
+	resp, err := gpt3API.GPT3(reqBody.Message.Text)
 	if err != nil {
-		log.Printf("Error: openAI API error: %v", err)
+		log.Printf("Error: OpenAI GPT3 API error: %v", err)
 		w.WriteHeader(http.StatusInternalServerError)
-		// TODO: Add openAI API error response
+		// TODO: Add openAI GPT3 API error response
 		return
 	}
 

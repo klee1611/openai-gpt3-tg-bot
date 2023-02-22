@@ -1,4 +1,4 @@
-package openaichatbot_test
+package openaigpt3bot_test
 
 import (
 	"encoding/json"

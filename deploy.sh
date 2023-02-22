@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-gcloud functions deploy "openai-tg-bot" \
-    --source "openaichatbot" \
+gcloud functions deploy "openai-gpt3-tg-bot" \
+    --source "src" \
     --allow-unauthenticated \
     --entry-point=TgWebHook \
     --env-vars-file=.env.yaml \

@@ -1,4 +1,4 @@
-package openaichatbot
+package openaigpt3bot
 
 import (
 	"encoding/json"
@@ -7,18 +7,18 @@ import (
 	log "github.com/sirupsen/logrus"
 )
 
-type OpenAIAPI struct {
+type OpenAIGPT3API struct {
 	BaseURL string
 	Token   string
 }
 
-type OpenAIResponse struct {
+type OpenAIGPT3Response struct {
 	Choices []struct {
 		Text string `json:"text"`
 	} `json:"choices"`
 }
 
-func (c *OpenAIAPI) OpenAI(message string) (res string, err error) {
+func (c *OpenAIGPT3API) GPT3(message string) (res string, err error) {
 	reqBody := map[string]interface{}{
 		"model":             "text-davinci-003",
 		"prompt":            message,
@@ -29,7 +29,7 @@ func (c *OpenAIAPI) OpenAI(message string) (res string, err error) {
 		"presence_penalty":  0.6,
 	}
 
-	log.Info("Sending request to openai")
+	log.Info("Sending request to OpenAI GPT3...")
 	resp, err := client.R().
 		SetBody(reqBody).
 		SetAuthToken(c.Token).
@@ -42,12 +42,12 @@ func (c *OpenAIAPI) OpenAI(message string) (res string, err error) {
 	}
 
 	if resp.StatusCode() != http.StatusOK {
-		log.Errorf("Error response from openAI API: %v", resp)
+		log.Errorf("Error response from OpenAI GPT3 API: %v", resp)
 		return "", err
 	}
-	log.Info("Got response from openai")
+	log.Info("Got response from OpenAI GPT3")
 
-	var result OpenAIResponse
+	var result OpenAIGPT3Response
 	err = json.Unmarshal(resp.Body(), &result)
 	if err != nil {
 		log.Error(err)

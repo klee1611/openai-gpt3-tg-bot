@@ -1,4 +1,4 @@
-module github.com/klee1611/openai-tg-bot
+module github.com/klee1611/openai-gpt3-tg-bot
 
 go 1.18
 

@@ -1,4 +1,4 @@
-package openaichatbot_test
+package openaigpt3bot_test
 
 import (
 	"net/http"
@@ -7,7 +7,7 @@ import (
 	"strings"
 	"testing"
 
-	chat "github.com/klee1611/openai-tg-bot"
+	gpt3 "github.com/klee1611/openai-gpt3-tg-bot"
 )
 
 func wrapper(body string, tgToken bool) (int, error) {
@@ -25,7 +25,7 @@ func wrapper(body string, tgToken bool) (int, error) {
 	}
 
 	rr := httptest.NewRecorder()
-	chat.TgWebHook(rr, req)
+	gpt3.TgWebHook(rr, req)
 
 	return rr.Code, nil
 }
