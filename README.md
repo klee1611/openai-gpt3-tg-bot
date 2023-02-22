@@ -1,5 +1,5 @@
 # Telegram Bot with OpenAI GPT-3 Integration
-<p float="left">
+<p float="left" align="middle">
 <img src="https://img.icons8.com/color/48/000000/golang.png" width="100" alt="Go icon" />
 <img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/openai-1523664-1290202.png" width="100" alt="GPT-3 icon" />
 <img src="https://img.icons8.com/color/48/000000/cloud-function.png" width="100" alt="Google Cloud Function" />
