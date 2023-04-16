@@ -20,7 +20,7 @@ type OpenAIGPT3Response struct {
 
 func (c *OpenAIGPT3API) GPT3(message string) (res string, err error) {
 	reqBody := map[string]interface{}{
-		"model":             "text-davinci-003",
+		"model":             "gpt-3.5-turbo",
 		"prompt":            message,
 		"max_tokens":        256,
 		"temperature":       0.9,
